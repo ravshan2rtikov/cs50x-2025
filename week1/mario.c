@@ -1,21 +1,24 @@
 #include <cs50.h>
 #include <stdio.h>
 
-void print_row(int n);
+
+void print_row(int bricks);
 int main(void)
 {
-    int n = 3;
-    for (int row = 0; row < n; row++)
-    {
-        print_row(n);
-    }
+
+// take input from the user
+    int height = get_int("What is the height of the pyramid?: ");
+
+// write the pyramid code
+print_row(height);
 }
 
-void print_row(int n)
+void print_row(int bricks)
 {
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < bricks; i++)
     {
-        printf("#");
-    } 
+        printf("#"); 
+    }
     printf("\n");
 }
+
