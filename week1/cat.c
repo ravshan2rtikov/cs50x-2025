@@ -1,18 +1,17 @@
 #include <cs50.h>
 #include <stdio.h>
 
-void meow(void);
+void meow(int n);
 
 int main(void)
 {
-  int i = 0;
-  for (int i = 0; i < 3; i++)
-  {
-    meow();
-  }
+  meow(3);
 }
 
-void meow(void)
+void meow(int n)
 {
+  int i = 0;
+  for (int i = 0; i < 3; i++)
+
   printf("meow\n");
 }
