@@ -5,13 +5,20 @@ void meow(int n);
 
 int main(void)
 {
-  meow(3);
+  int n;
+  do
+  {
+    n = get_int("Number: ");
+  }
+  while (n <1);
+  meow(n);
+  
 }
 
 void meow(int n)
 {
   int i = 0;
-  for (int i = 0; i < 3; i++)
+  for (int i = 0; i < n; i++)
 
   printf("meow\n");
 }
