@@ -1,35 +1,38 @@
 #include <cs50.h>
 #include <stdio.h>
 
-// prototypes
-void print_row(int bricks);
-// main
+void print_row(int spaces, int bricks);
+
 int main(void)
 {
-
-// take input from the user + cascade the edge case with do loop
-    int height;
+    // take user input
+    int ht;
     do
     {
-        height = get_int("What is the height of the pyramid?: ");
-    } 
-    while (height < 1);
-    
-
-// write the pyramid code
-    for (int i = 0; i < height; i++)
-    {
-        print_row(i + 1);
+        ht = get_int("Height: ");
     }
+    while (ht < 1);
+
+    // print pyramid using input
+    for (int i = 0; i < ht; i++)
+    {
+        print_row(ht - i - 1, i + 1);
+    }
+
 }
 
-// functions
-void print_row(int bricks)
+void print_row(int spaces, int bricks)
 {
-    for (int i = 0; i < bricks; i++)
+    // print the spaces
+    for (int i = 0; i < spaces; i++)
     {
-        printf("#"); 
+        printf(" ");
+    }
+
+    // print the bricks
+    for (int j = 0; j < bricks; j++)
+    {
+        printf("#");
     }
     printf("\n");
 }
-
