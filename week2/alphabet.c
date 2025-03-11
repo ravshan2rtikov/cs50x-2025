@@ -9,7 +9,11 @@ int main(void)
     // iterate through each element in the input string
     for (int i = 0; i < strlen(text); i++)
     {
-        printf("%c ", text[i]);
+        if (text[i] < text[i - 1])
+        {           
+            printf("No\m");
+            return 0;
+        }
+        printf("Yes\n");
     }
-    printf("\n");
 }
