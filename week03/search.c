@@ -1,15 +1,15 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
 
 int main(void)
 {
-    int numbers[] = {20, 500, 10, 5, 100, 1, 50};
+    string strings[] = {"battleship", "boat", "top hat", "cat", "dog"};
 
-    int n = get_int("Number: ");
-    int len = strlen(numbers[7]);
-    for (int i = 0; i < len; i++)
+    string s = get_string("Word: ");
+    for (int i = 0; i < 5; i++)
     {
-        if (numbers == n);
+        if (strcmp(strings[i], s) == 0);
         {
             printf("Found\n");
             return 0;
