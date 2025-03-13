@@ -9,7 +9,7 @@ int main(void)
     int number;
     do
     {
-        number = get_init("Number: ");
+        number = get_int("Number: ");
     }
     while (number < 0);
 
