@@ -1,18 +1,31 @@
 #include <cs50.h>
+#include <ctype.h>
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(void)
 {
-    FILE *file = fopen("phonebook.csv", "a");
-    if (file == NULL)
+    char *s = get_string("s: ");
+
+    char *t = malloc(strlen(s) + 1);
+    if (t == NULL)
     {
         return 1;
     }
+    for (int i = 0, n = strlen(s); i <= n; i++)
+    {
+        t[i] = s[i];
+    }
+    if (strlen(t) > 0)
+    {
+        t[0] = toupper(t[0]);
+    }
 
-    char *name = get_string("Name: ");
-    char *number = get_string("Number: ");
+    t[0] = toupper(t[0]);
 
-    fprintf(file, "%s, %s\n", name, number);
-    fclose(file);
+    printf("%s\n", s);
+    printf("%s\n", t);
+
+    free(t);
 }
