@@ -4,7 +4,7 @@
 
 typedef struct node
 {
-    int *number;
+    int number;
     struct node *next;
 } node;
 
@@ -20,9 +20,21 @@ int main(void)
             return 1;
         }
         n->number = get_int("Number: ");
-        n->next = list;
+        n->next = NULL;
 
-        list = n;
+        if (list == NULL)
+        {
+            list = n;
+        }
+        else
+        {
+            for (node *ptr = list; ptr != NULL; ptr = ptr->next)
+            {
+                ptr->next = n;
+                break;
+            }
+        }
+        
     }
 
     node *ptr = list;
