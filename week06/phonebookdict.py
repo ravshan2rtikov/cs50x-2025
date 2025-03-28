@@ -6,3 +6,4 @@ if name in people:
     print(f"Number: {people[name]}")
 else:
     print("not found")
+
